@@ -1,117 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Ship Hub — Powered by The Zixgar Group</title>
-  <meta name="theme-color" content="#1C2B3A">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maemori Tea</title>
+  <meta name="theme-color" content="#FFFFFF">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; 
+      background-color: #f0ebf8; 
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-
-  <div id="loadingScreen" class="loading-screen">
-    <div class="loading-spinner" aria-hidden="true"></div>
-    <p class="loading-mark">Ship Hub</p>
-  </div>
-
-  <header class="topbar">
-    <div class="topbar-title">
-      <div>
-        <h1>Ship Hub</h1>
-        <p class="tagline">Powered by The Zixgar Group · <span id="syncLabel">กำลังโหลดข้อมูล...</span></p>
-      </div>
-    </div>
-    <button id="addBtn" class="btn btn-primary">+ เพิ่มรายการ</button>
-  </header>
-
-  <section class="summary-bar" id="summaryBar">
-    <div class="metric-card">
-      <p class="metric-label">รายการทั้งหมด</p>
-      <p class="metric-value" id="mTotal">–</p>
-    </div>
-    <div class="metric-card">
-      <p class="metric-label">ยอดรวมที่ต้องจ่าย</p>
-      <p class="metric-value" id="mUnpaid">–</p>
-    </div>
-    <div class="metric-card">
-      <p class="metric-label">เร่งด่วน ≤3 วัน</p>
-      <p class="metric-value metric-danger" id="mUrgent">–</p>
-    </div>
-    <div class="metric-card">
-      <p class="metric-label">กำลังจัดส่ง</p>
-      <p class="metric-value" id="mShipping">–</p>
-    </div>
-  </section>
-
-  <section class="toolbar">
-    <div class="view-toggle">
-      <button class="view-btn active" data-view="list">รายการ</button>
-      <button class="view-btn" data-view="kanban">สถานะ</button>
-    </div>
-    <select id="sourceFilter" class="select-filter">
-      <option value="">ทุกแหล่งสั่งซื้อ</option>
-    </select>
-  </section>
-
-  <main id="listView" class="list-view"></main>
-
-  <main id="kanbanView" class="kanban-view" style="display:none;"></main>
-
-  <div id="modalBackdrop" class="modal-backdrop" style="display:none;">
-    <div class="modal">
-      <div class="modal-header">
-        <h2 id="modalTitle">เพิ่มรายการสั่งซื้อ</h2>
-        <button id="modalClose" class="icon-btn" aria-label="ปิด">✕</button>
-      </div>
-      <form id="orderForm">
-        <input type="hidden" id="f_id">
-        <label>ชื่อสินค้า
-          <input type="text" id="f_itemName" required placeholder="เช่น ที่ชาร์จโทรศัพท์ไร้สาย">
-        </label>
-        <div class="form-row">
-          <label>จำนวน
-            <input type="number" id="f_quantity" min="0" value="1">
-          </label>
-          <label>แหล่งสั่งซื้อ
-            <select id="f_source"></select>
-          </label>
-        </div>
-        <div class="form-row">
-          <label>ราคาสินค้า (บาท)
-            <input type="number" id="f_price" min="0" step="0.01" value="0">
-          </label>
-          <label>ค่าส่ง (บาท)
-            <input type="number" id="f_shipping" min="0" step="0.01" value="0">
-          </label>
-        </div>
-        <p class="form-total">รวมทั้งหมด <span id="f_total">฿0</span></p>
-        <div class="form-row">
-          <label>วันที่ต้องสั่ง
-            <input type="date" id="f_deadline">
-          </label>
-          <label>สถานะ
-            <select id="f_status"></select>
-          </label>
-        </div>
-        <label>เลขแทร็กกิ้ง
-          <input type="text" id="f_tracking" placeholder="ถ้ามี">
-        </label>
-        <label>หมายเหตุ
-          <textarea id="f_notes" rows="2" placeholder="รายละเอียดเพิ่มเติม"></textarea>
-        </label>
-        <div class="modal-actions">
-          <button type="button" id="deleteBtn" class="btn btn-danger-ghost" style="display:none;">ลบรายการ</button>
-          <div class="modal-actions-right">
-            <button type="button" id="cancelBtn" class="btn">ยกเลิก</button>
-            <button type="submit" class="btn btn-primary">บันทึก</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfp5MoB0jVa-KI3iRgWErVHkaHHK7gB74DBDeuQY_P1u1XUmA/viewform?embedded=true">Loading…</iframe>
 </body>
 </html>
