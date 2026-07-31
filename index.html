@@ -8,7 +8,6 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- ใช้ฟอนต์ Playfair Display สำหรับภาษาอังกฤษ และ Noto Sans Lao สำหรับภาษาลาว -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   
   <style>
@@ -36,10 +35,18 @@
       text-align: center;
       color: #FFFFFF;
       
-      /* เปลี่ยนลิงก์รูปล่างนี้ เป็น url('bg.jpg') เมื่ออัปโหลดรูปพื้นหลังลง GitHub แล้ว */
+      /* รูปพื้นหลังสำหรับมือถือ */
       background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
-                 url('bg.jpg?v=1') center/cover no-repeat;
+                  url('bg.jpg?v=1') center/cover no-repeat;
+    }
 
+    /* กฎสำหรับหน้าจอคอมพิวเตอร์ (กว้างกว่า 768px) */
+    @media (min-width: 768px) {
+      .landing-wrapper {
+        /* รูปพื้นหลังสำหรับคอมพิวเตอร์ */
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
+                    url('bg-desktop.jpg?v=1') center/cover no-repeat;
+      }
     }
 
     /* ส่วนบนสุด */
@@ -110,7 +117,7 @@
 
     .btn-outline:hover {
       background: #FFFFFF;
-      color: #5A3D2B; /* เปลี่ยนเป็นสีน้ำตาลตอนเอาเมาส์ชี้ */
+      color: #5A3D2B; 
     }
 
     .bottom-section p {
