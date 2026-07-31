@@ -1,176 +1,153 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="lo">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Maemori Teahouse & Eatery</title>
-  <meta name="theme-color" content="#4A3B32">
+  <meta name="theme-color" content="#8C5C38">
   
-  <!-- เลือกใช้ฟอนต์สไตล์พรีเมียม -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <!-- ใช้ฟอนต์ Playfair Display สำหรับภาษาอังกฤษ และ Noto Sans Lao สำหรับภาษาลาว -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   
   <style>
-    :root {
-      --primary: #4A3B32; /* สีน้ำตาลเข้ม */
-      --secondary: #6B7A64; /* สีเขียวมัทฉะ */
-      --accent: #D4B895; /* สีเบจ */
-      --bg-color: #F9F7F3; /* สีพื้นหลัง */
-      --text-main: #2C241E;
-      --text-light: #7A6F66;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: 'IBM Plex Sans Thai', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+    body, html {
+      height: 100%;
+      font-family: 'Noto Sans Lao', sans-serif;
+      background-color: #4A3B32; 
     }
 
-    /* กล่องการ์ดตรงกลาง */
-    .container {
-      background-color: #FFFFFF;
-      max-width: 480px;
-      width: 100%;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 12px 35px rgba(74, 59, 50, 0.08);
-      animation: fadeUp 0.8s ease-out forwards;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    /* ส่วนแบนเนอร์ด้านบน */
-    .banner {
-      width: 100%;
-      height: 240px;
-      background-color: var(--primary);
+    .landing-wrapper {
       position: relative;
+      width: 100%;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 8vh 20px 6vh 20px;
       text-align: center;
-      padding: 20px;
-      /* รูปพื้นหลังชาเขียวพรีเมียม */
-      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1599558319323-01bd9b769ea7?q=80&w=1000&auto=format&fit=crop') center/cover;
-    }
-
-    .banner h1 {
-      font-family: 'Playfair Display', serif;
       color: #FFFFFF;
-      font-size: 2.2rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      
+      /* เปลี่ยนลิงก์รูปล่างนี้ เป็น url('bg.jpg') เมื่ออัปโหลดรูปพื้นหลังลง GitHub แล้ว */
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
+                  url('https://images.unsplash.com/photo-1576092762791-dd9e2220afa1?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
     }
 
-    .banner p {
-      color: var(--accent);
-      font-size: 0.85rem;
+    /* ส่วนบนสุด */
+    .top-section h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .top-section p {
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    /* ส่วนกลาง */
+    .mid-section {
+      margin-top: -12vh;
+    }
+
+    .mid-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .mid-section p {
+      font-size: 0.9rem;
       font-weight: 500;
       letter-spacing: 4px;
       text-transform: uppercase;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.4);
     }
 
-    /* ส่วนเนื้อหา */
-    .content {
-      padding: 40px 30px;
-      text-align: center;
-    }
-
-    .content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-
-    .content p {
-      color: var(--text-light);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 35px;
+    /* ส่วนล่าง */
+    .bottom-section {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* ปุ่มกด */
-    .btn {
+    .btn-outline {
+      font-family: 'Playfair Display', serif;
       display: inline-block;
-      background-color: var(--primary);
+      width: 220px;
+      padding: 10px 0;
+      border: 1.5px solid #FFFFFF;
+      border-radius: 50px;
       color: #FFFFFF;
       text-decoration: none;
-      padding: 16px 36px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 500;
+      font-size: 1.3rem;
+      letter-spacing: 4px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(74, 59, 50, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(2px);
+      margin-bottom: 25px;
     }
 
-    .btn:hover {
-      background-color: var(--secondary); /* เปลี่ยนเป็นสีเขียวมัทฉะตอนเอาเมาส์ชี้ */
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(107, 122, 100, 0.3);
+    .btn-outline:hover {
+      background: #FFFFFF;
+      color: #5A3D2B; /* เปลี่ยนเป็นสีน้ำตาลตอนเอาเมาส์ชี้ */
     }
 
-    /* Footer */
-    .footer {
-      margin-top: 30px;
-      font-size: 0.8rem;
-      color: #A9A29D;
-      text-align: center;
-    }
-
-    /* อนิเมชั่นให้เว็บลอยขึ้นมาตอนเปิด */
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .bottom-section p {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      font-weight: 300;
+      opacity: 0.95;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- ส่วนรูปภาพแบนเนอร์ -->
-    <div class="banner">
+  <div class="landing-wrapper">
+    <!-- Top Section -->
+    <div class="top-section">
+      <h2>Specialty Teahouse</h2>
+      <p>Beverage &middot; Food &middot; Dessert</p>
+    </div>
+
+    <!-- Mid Section -->
+    <div class="mid-section">
       <h1>Coming Soon</h1>
-      <p>Teahouse & Eatery</p>
+      <p>Teahouse &amp; Eatery</p>
     </div>
 
-    <!-- ส่วนเนื้อหา -->
-    <div class="content">
-      <h2>Join Us<br>มาร่วมทีมนำกัน</h2>
-      <p>
-        กรุณากรอกข้อมูลด้านล่างเพื่อจองคิวสัมภาษณ์งาน<br>
-        ทางทีมงานจะติดต่อกลับเพื่อยืนยันเวลาอีกครั้ง<br>
-        <br>
-        <span style="font-size: 0.85rem;">(Please fill out the information below to book your interview queue. Our team will contact you shortly to confirm the details.)</span>
-      </p>
-      
-      <!-- ลิงก์ไปยัง Google Form ของคุณ -->
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfp5MoB0jVa-KI3iRgWErVHkaHHK7gB74DBDeuQY_P1u1XUmA/viewform" target="_blank" class="btn">
-        กรอกข้อมูลสมัครงาน
+    <!-- Bottom Section -->
+    <div class="bottom-section">
+      <!-- ลิงก์ไป Google Form -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfp5MoB0jVa-KI3iRgWErVHkaHHK7gB74DBDeuQY_P1u1XUmA/viewform" target="_blank" class="btn-outline">
+        join our
       </a>
+      <p>
+        ມາຮ່ວມເປັນສ່ວນໜຶ່ງຂອງທີມພວກເຮົາ<br>
+        ກົດປຸ່ມເພື່ອຝາກປະຫວັດໄດ້ເລີຍ
+      </p>
     </div>
-  </div>
-
-  <div class="footer">
-    &copy; 2026 Maemori Teahouse & Eatery
   </div>
 
 </body>
